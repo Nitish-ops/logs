@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.sql import func
 
-
+# i have updated
 DATABASE_URL = 'mysql+pymysql://root:NiGr%408120@localhost/scheduler'
 
 Base = declarative_base()
