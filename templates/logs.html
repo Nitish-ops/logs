@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latest Logs</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Latest 6 Log Entries</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Timestamp</th>
+        <th>Type</th>
+        <th>Message</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.timestamp }}</td>
+        <td>{{ log.log_type }}</td>
+        <td>{{ log.log_message }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% if missing_note %}
+<p style="color: red;"><strong>Note:</strong> {{ missing_note }}</p>
+{% endif %}
+</body>
+</html>
